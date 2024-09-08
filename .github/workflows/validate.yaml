@@ -1,0 +1,25 @@
+name: Validate Data Contract
+
+on:
+  push:
+    branches:
+      - main  # Kør når der laves en push til main branch
+  pull_request:
+    branches:
+      - main  # Kør når der laves en pull request til main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Bruger en nyeste Ubuntu-maskine til CI-pipelinen
+    steps:
+    - uses: actions/checkout@v2  # Tjekker dit repo ud
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Installerer Python 3.x version
+    - name: Install dependencies
+      run: |
+        pip install pyyaml pydantic  # Installerer nødvendige biblioteker til dit projekt
+    - name: Run validation
+      run: |
+        python main.py  # Kører dit main.py script for at validere data
