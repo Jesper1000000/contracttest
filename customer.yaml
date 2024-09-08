@@ -1,0 +1,22 @@
+name: Customer
+description: A customer record with basic details
+owner: product-team@example.com
+version: 1.0
+fields:
+  customer_id:
+    type: string
+    description: Unique ID for the customer
+    required: true
+  name:
+    type: string
+    description: Full name of the customer
+    required: true
+  email:
+    type: string
+    description: Email address of the customer
+    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    required: true
+  signup_date:
+    type: date
+    description: Date the customer signed up
+    required: true
