@@ -20,3 +20,9 @@ fields:
     type: date
     description: Date the customer signed up
     required: true
+  phone_number:
+  type: string
+  description: Phone number of the customer
+  pattern: "^[0-9]{10}$"
+  required: false
+
