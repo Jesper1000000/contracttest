@@ -19,7 +19,9 @@ jobs:
         python-version: '3.x'  # Installerer Python 3.x version
     - name: Install dependencies
       run: |
-        pip install pyyaml pydantic[email]  # Installerer nødvendige biblioteker med email-validator
+        pip install pyyaml 
+        pip install pydantic[email]
+        pip install pandas
     - name: Run validation
       run: |
         python main.py  # Kører dit main.py script for at validere data
